@@ -17,7 +17,7 @@ export const currencyMappings = {
 
 // WhatsApp Configuration - CHANGE PHONE NUMBER HERE
 export const whatsappConfig = {
-  phoneNumber: "+966578030378", // Change this to your WhatsApp business number
+  phoneNumber: "+123456789", // Change this to your WhatsApp business number
   
   // WhatsApp message template (Arabic)
   messageTemplateAr: (amount: string, currency: string, rate: number, total: string) => 
