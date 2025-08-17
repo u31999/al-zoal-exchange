@@ -3,16 +3,26 @@
 // ===================================
 // Update exchange rates here - rates show how much foreign currency you get for 1 SDG
 export const exchangeRates = {
-  "ريال سعودي": 0.0067,
-  "درهم إماراتي": 0.0065, 
-  "دولار أمريكي": 0.00175
+  "ريال سعودي": 780,     // 1 SAR = 780 SDG
+  "درهم إماراتي": 800, 
+  "ريال عماني": 800,
+  "ريال قطري" : 800,
+  "جنيه مصري" : 60,
+  "دولار أمريكي": 3300,  // 1 USD = 3300 SDG
+  "دولار رقمي": 3300
 };
 
 // Currency mappings for English
 export const currencyMappings = {
   "ريال سعودي": "SAR",
   "درهم إماراتي": "AED", 
-  "دولار أمريكي": "USD"
+  "ريال عماني": "OMR",
+  "ريال قطري" : "QAR",
+  "جنيه مصري" : "EGP",
+  "دولار أمريكي": "USD",
+  "دولار رقمي": "USDT"
+
+
 };
 
 // WhatsApp Configuration - CHANGE PHONE NUMBER HERE

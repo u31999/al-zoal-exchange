@@ -66,9 +66,10 @@ const MainContent = () => {
           </div>
         </div>
       </section>
-
+{/* 
       <AboutSection />
       <ContactSection />
+      */}
       <Footer />
     </div>
   );

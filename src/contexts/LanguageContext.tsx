@@ -11,8 +11,8 @@ interface LanguageContextType {
 const translations = {
   ar: {
     // Header
-    siteName: "الزول للتحويلات المالية",
-    tagline: "خدمة تحويلات مالية آمنة وسريعة",
+    siteName: "الزول للخدمات المالية",
+    tagline: "ضمان - مصداقية - سرعة",
     languageToggle: "EN",
     
     // Main Tabs
@@ -21,7 +21,7 @@ const translations = {
     arabTransfers: "تحويلات الدول العربية",
     
     // Reverse Transfer Tab
-    reverseTitle: "الزول للتحويلات العكسية",
+    reverseTitle: "التحويلات العكسية",
     reverseSubtitle: "التحويل من الجنيه السوداني إلى العملات الأجنبية",
     officialRates: "أسعار الصرف المباشرة",
     lastUpdate: "آخر تحديث",
@@ -85,8 +85,8 @@ const translations = {
   },
   en: {
     // Header
-    siteName: "Al-Zoul Transfers",
-    tagline: "Safe and Fast Money Transfer Service",
+    siteName: "Al-Zoul finacial services",
+    tagline: "Guarantee - Credibility - Speed",
     languageToggle: "العربية",
     
     // Main Tabs

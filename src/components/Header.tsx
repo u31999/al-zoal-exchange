@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
+import Logo from '../res/al-zoal-logo.png'
 
 const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
@@ -11,7 +12,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Tagline */}
           <div className="flex-1">
+            
             <h1 className="text-2xl md:text-3xl font-bold mb-1 animate-fade-in-up">
+              <img src={Logo} className='max-w-[100px]'/>
               {t('siteName')}
             </h1>
             <p className="text-white/90 text-sm md:text-base animate-fade-in-up">

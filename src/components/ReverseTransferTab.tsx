@@ -22,13 +22,15 @@ const ReverseTransferTab = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleCalculate = () => {
-    if (amount && selectedCurrency) {
-      const numAmount = parseFloat(amount);
-      const rate = exchangeRates[selectedCurrency];
-      setResult({ amount: numAmount * rate, rate });
-    }
-  };
+const handleCalculate = () => {
+  if (amount && selectedCurrency) {
+    const numAmount = parseFloat(amount);
+    const rate = exchangeRates[selectedCurrency]; // SDG per 1 unit of foreign currency
+
+    // ✅ convert from SDG → foreign currency
+    setResult({ amount: numAmount / rate, rate });
+  }
+};
 
   const handleWhatsApp = () => {
     if (result && amount && selectedCurrency) {
@@ -63,21 +65,36 @@ const ReverseTransferTab = () => {
             </div>
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {Object.entries(exchangeRates).map(([currency, rate]) => (
-              <div key={currency} className="bg-accent/50 rounded-lg p-4 text-center">
-                <div className="font-semibold text-lg">{currencyMappings[currency] || currency}</div>
-                <div className="text-2xl font-bold text-primary">{rate.toFixed(4)}</div>
-                <div className="text-sm text-muted-foreground">1 SDG</div>
-              </div>
-            ))}
+<CardContent>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {Object.entries(exchangeRates)
+      .filter(([currency]) =>
+        ["ريال سعودي", "درهم إماراتي", "دولار أمريكي"].includes(currency)
+      )
+      .map(([currency, rate]) => {
+        return (
+          <div key={currency} className="bg-accent/50 rounded-lg p-4 text-center">
+            <div className="font-semibold text-lg">
+              {currencyMappings[currency] || currency}
+            </div>
+            <div className="text-2xl font-bold text-primary">
+              {new Intl.NumberFormat("en-US").format(rate)} SDG
+            </div>
+            <div className="text-sm text-muted-foreground">
+              1 {currencyMappings[currency] || currency}
+            </div>
           </div>
-          <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
-            <RefreshCw className="w-4 h-4 mr-1 animate-spin" />
-            {t('autoRefresh')}
-          </div>
-        </CardContent>
+        );
+      })}
+  </div>
+
+  <div className="flex items-center justify-center mt-4 text-sm text-muted-foreground">
+    <RefreshCw className="w-4 h-4 mr-1 animate-spin" />
+    {t("autoRefresh")}
+  </div>
+</CardContent>
+
+
       </Card>
 
       {/* Transfer Form */}
